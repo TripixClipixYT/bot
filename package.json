@@ -1,0 +1,16 @@
+{
+  "name": "tripixclipix",
+  "version": "1.0.1",
+  "description": "Youtube Bot!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TripixClipixYT",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "node.js": "0.0.0"
+  },
+  "devDependencies": {}
+}
