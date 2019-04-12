@@ -45,7 +45,7 @@ case 'serverinfo':
            .setColor(0xF1C40F)
               .addField('Current Server', message.guild.name)
                   .setFooter('Made by TripixClipixYT#6035')
-                      message.channel.sendEmbed(embed);
+                      message.channel.sendEmbed(embed2);
                            break; 
                            case 'botinfo':
                             const embed4 = new Discord.RichEmbed()
