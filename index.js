@@ -43,7 +43,7 @@ case 'serverinfo':
      .setTitle('Server Information')
         .addField('Server Name', message.guild.name)
            .setColor(0xF1C40F)
-              .addField('Current Server', message.guild.name)
+               .addField('Server Was Created in:', message.guild.createdTimestamp)
                   .setFooter('Made by TripixClipixYT#6035')
                       message.channel.sendEmbed(embed2);
                            break; 
