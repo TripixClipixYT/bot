@@ -33,7 +33,7 @@ setInterval(function(){
                                               .addField('Player Name:', message.author.username)
                                                   .setColor(0xF1C40F)
                                                     .addField('Current Server', message.guild.name)
-                                                      .addField('Roles:', message.react.length)
+                                                      .addField('Date your Discord acc was created:', message.author.createdTimestamp)
                                                       .setThumbnail(message.author.avatarURL)
                                                         .setFooter('Made by TripixClipixYT#6035')
                                                           message.channel.sendEmbed(embed);
