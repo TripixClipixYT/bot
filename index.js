@@ -63,7 +63,7 @@ case 'serverinfo':
                              .setTitle('Server Help Menu')
                                 .addField('Server Commands')
                                 .addField('/botinfo /user /developer /serverinfo[unstable]')
-                                   .setColor(#0300ff)
+                                   .setColor(3447003)
                                          .setFooter('Made by TripixClipixYT#6035')
                                              message.channel.sendEmbed(embed5);
                                                   break; 
