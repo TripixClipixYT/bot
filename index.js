@@ -57,6 +57,17 @@ case 'serverinfo':
                                          .setFooter('Made by TripixClipixYT#6035')
                                              message.channel.sendEmbed(embed4);
                                                   break; 
+      
+ case 'help':
+                            const embed5= new Discord.RichEmbed()
+                             .setTitle('Server Help Menu')
+                                .addField('Server Commands')
+                                .addField('/botinfo /user /developer /serverinfo[unstable]')
+                                   .setColor(0071c5)
+                                         .setFooter('Made by TripixClipixYT#6035')
+                                             message.channel.sendEmbed(embed5);
+                                                  break; 
+            
       }
    }
 )         
