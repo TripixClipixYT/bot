@@ -16,7 +16,7 @@ bot.on('ready', () =>{
 setInterval(function(){
   let status = statuses[Math.floor(Math.random()* statuses.length)];
   bot.user.setActivity(status, {type: 'WATCHING'});
-}, 1000)
+}, 5000)
 
    bot.on('message', message=>{
       let args = message.content.substring(PREFIX.length).split(" ");
@@ -33,9 +33,9 @@ setInterval(function(){
                                               .addField('Player Name:', message.author.username)
                                                   .setColor(0xF1C40F)
                                                     .addField('Current Server', message.guild.name)
-                                                      .addField('Date your Discord acc was created:', message.author.createdAt)
-                                                               .addField('Date you joined the Server:', message.author.joinedAt)
-                                                      .setThumbnail(message.author.avatarURL)
+                                                      .addField('Date your Discord account was created:', message.author.createdAt)
+                                                      .addField('Your last message:', message.author.lastMessage)
+                                                       .setThumbnail(message.author.avatarURL)
                                                         .setFooter('Made by TripixClipixYT#6035')
                                                           message.channel.sendEmbed(embed);
                                                              break;             
@@ -44,9 +44,9 @@ case 'serverinfo':
      .setTitle('Server Information')
         .addField('Server Name', message.guild.name)
            .setColor(0xF1C40F)
-               .addField('Server Was Created in:', message.guild.createdTimestamp)
+              .addField('Server Was Created in:', message.guild.createdAt)
                   .setFooter('Made by TripixClipixYT#6035')
-                      message.channel.sendEmbed(embed2);
+                      message.channel.sendEmbed(embed);
                            break; 
                            case 'botinfo':
                             const embed4 = new Discord.RichEmbed()
@@ -58,17 +58,6 @@ case 'serverinfo':
                                          .setFooter('Made by TripixClipixYT#6035')
                                              message.channel.sendEmbed(embed4);
                                                   break; 
-      
- case 'help':
-                            const embed5= new Discord.RichEmbed()
-                             .setTitle('Server Help Menu')
-                                .addField('Server Commands')
-                                .addField('/botinfo /user /developer /serverinfo[unstable]')
-                                   .setColor(3447003)
-                                         .setFooter('Made by TripixClipixYT#6035')
-                                             message.channel.sendEmbed(embed5);
-                                                  break; 
-            
       }
    }
 )         
