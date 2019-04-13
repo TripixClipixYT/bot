@@ -34,7 +34,7 @@ setInterval(function(){
                                                   .setColor(0xF1C40F)
                                                     .addField('Current Server', message.guild.name)
                                                       .addField('Date your Discord account was created:', message.author.createdAt)
-                                                      .addField('Your last message:', message.author.lastMessage)
+                                                      .addField('Your last message:', message.bot.lastMessage)
                                                        .setThumbnail(message.author.avatarURL)
                                                         .setFooter('Made by TripixClipixYT#6035')
                                                           message.channel.sendEmbed(embed);
@@ -46,7 +46,7 @@ case 'serverinfo':
            .setColor(0xF1C40F)
               .addField('Server Was Created in:', message.guild.createdAt)
                   .setFooter('Made by TripixClipixYT#6035')
-                      message.channel.sendEmbed(embed);
+                      message.channel.sendEmbed(embed2);
                            break; 
                            case 'botinfo':
                             const embed4 = new Discord.RichEmbed()
