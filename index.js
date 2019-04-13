@@ -16,7 +16,7 @@ bot.on('ready', () =>{
 setInterval(function(){
   let status = statuses[Math.floor(Math.random()* statuses.length)];
   bot.user.setActivity(status, {type: 'WATCHING'});
-}, 5000)
+}, 1000)
 
    bot.on('message', message=>{
       let args = message.content.substring(PREFIX.length).split(" ");
@@ -34,6 +34,7 @@ setInterval(function(){
                                                   .setColor(0xF1C40F)
                                                     .addField('Current Server', message.guild.name)
                                                       .addField('Date your Discord acc was created:', message.author.createdAt)
+                                                               .addField('Date you joined the Server:', message.author.joinedAt)
                                                       .setThumbnail(message.author.avatarURL)
                                                         .setFooter('Made by TripixClipixYT#6035')
                                                           message.channel.sendEmbed(embed);
