@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XLCOzQ.BlCTxN4NOOsu7tqsBvIxWwaGdCA';
 const PREFIX = '/';
 
-var version = '1.1.0';
+var version = '1.1.9';
 
 bot.registry
 bot.on('ready', () =>{
@@ -48,15 +48,14 @@ case 'serverinfo':
                   .setFooter('Made by TripixClipixYT#6035')
                       message.channel.sendEmbed(embed2);
                            break; 
-                           case 'botinfo':
-                            const embed4 = new Discord.RichEmbed()
-                             .setTitle('Bot Information')
-                                .addField('Bot Name')
-                                .addField('Tripix Clipix')
-                                .addField('Bot Version', version)
-                                   .setColor(0xF1C40F)
-                                         .setFooter('Made by TripixClipixYT#6035')
-                                             message.channel.sendEmbed(embed4);
+case 'botinfo':
+   const embed4 = new Discord.RichEmbed()
+    .setTitle('Bot Information')
+      .addField('Bot Name', bot.name)                 
+           .addField('Bot Version', version)
+              .setColor(0xF1C40F)
+                     .setFooter('Made by TripixClipixYT#6035')
+                              message.channel.sendEmbed(embed4);
                                                   break; 
       }
    }
