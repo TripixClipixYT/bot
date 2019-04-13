@@ -34,7 +34,7 @@ setInterval(function(){
                                                   .setColor(0xF1C40F)
                                                     .addField('Current Server', message.guild.name)
                                                       .addField('Date your Discord account was created:', message.author.createdAt)
-                                                      .addField('Your last message:', message.author.lastMessageid)
+                                                      .addField('Your last message:', message.author.lastMessageID)
                                                        .setThumbnail(message.author.avatarURL)
                                                         .setFooter('Made by TripixClipixYT#6035')
                                                           message.channel.sendEmbed(embed);
