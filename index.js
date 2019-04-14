@@ -11,7 +11,7 @@ bot.on('ready', () =>{
       console.log('Tripix Clipix Bot is online!');
    })
 
-   let statuses =['Live Sub Count PewDiePie vs T-Series, https://www.twitch.tv/videos/410542139##']
+   let statuses =['Live Sub Count PewDiePie vs T-Series']
 
 setInterval(function(){
   let status = statuses[Math.floor(Math.random()* statuses.length)];
