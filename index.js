@@ -4,18 +4,18 @@ const bot = new Discord.Client();
 const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XLCOzQ.BlCTxN4NOOsu7tqsBvIxWwaGdCA';
 const PREFIX = '/';
 
-var version = '1.1.9';
+var version = '1.1.10';
 
 bot.registry
 bot.on('ready', () =>{
       console.log('Tripix Clipix Bot is online!');
    })
 
-   let statuses =['Tripix Clipix videos', "Dido_D's Streams", 'Subscribe to PewdiePie and Dido_D!']
+   let statuses =['Live Sub Count PewDiePie vs T-Series']
 
 setInterval(function(){
   let status = statuses[Math.floor(Math.random()* statuses.length)];
-  bot.user.setActivity(status, {type: 'WATCHING'});
+  bot.user.setActivity(status, {type: 'Streaming'});
 }, 5000)
 
    bot.on('message', message=>{
