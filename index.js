@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XLCOzQ.BlCTxN4NOOsu7tqsBvIxWwaGdCA';
 const PREFIX = '/';
 
-var version = '1.1.10';
+var version = '1.1.11';
 
 bot.registry
 bot.on('ready', () =>{
@@ -34,7 +34,7 @@ setInterval(function(){
                                                   .setColor(0xF1C40F)
                                                     .addField('Current Server', message.guild.name)
                                                       .addField('Date your Discord account was created:', message.author.createdAt)
-                                                      .addField('Your last message:', message.author.lastMessageID)
+                                                      .addField('Date you joined the server:', message.author.joined)
                                                        .setThumbnail(message.author.avatarURL)
                                                         .setFooter('Made by TripixClipixYT#6035')
                                                           message.channel.sendEmbed(embed);
@@ -51,7 +51,7 @@ case 'serverinfo':
 case 'botinfo':
    const embed4 = new Discord.RichEmbed()
     .setTitle('Bot Information')
-      .addField('Bot Name', bot.name)                 
+      .addField('Bot Name', 'Tripix Clipix')                 
            .addField('Bot Version', version)
               .setColor(0xF1C40F)
                      .setFooter('Made by TripixClipixYT#6035')
