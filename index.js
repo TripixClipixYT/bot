@@ -55,45 +55,8 @@ case 'serverinfo':
                                    .setColor(0xF1C40F)
                                          .setFooter('Made by TripixClipixYT#6035')
                                              message.channel.sendEmbed(embed4);
-                                                  break; 
-                                                  if (user === func.autouser(message, args.join(" ")) || message.guild.members.get(args[0])) {
-                                                    const embed = new Discord.MessageEmbed()
-                                                        .setColor('#36393e')
-                                                        .setThumbnail(user.user.displayAvatarURL())
-                                                        .setAuthor(`${user.user.username}#${user.user.discriminator}`, user.user.displayAvatarURL())
-                                                        .addField("ID:", `${user.user.id}`, true)
-                                                        .addField("Nickname:", `${member.nickname || 'None'}`, true)
-                                                        .addField("Status:", status(), true)
-                                                        .addField("Bot:", `${isBot()}`, true)
-                                                        .addField("Game", game(), true)
-                                                        .addField("Created At" + ` (${moment(user.user.createdAt, "dd").fromNow()})`, `${moment.utc(user.user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, false)
-                                                        .addField("Joined Server" + ` (${moment(member.joinedAt, "dd").fromNow()})`, `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, false)
-                                                        .addField("Highest Role", member.user.highestRole, true)
-                                                        .addField("Roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
-                                                        .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL())
-                                                    message.channel.send({
-                                                        embed
-                                                    });
-                                                } else {
-                                                    const embed = new Discord.MessageEmbed()
-                                                        .setColor('#36393e')
-                                                        .setThumbnail(user.displayAvatarURL())
-                                                        .setAuthor(`${user.username}#${user.discriminator}`, user.displayAvatarURL())
-                                                        .addField("ID:", `${user.id}`, true)
-                                                        .addField("Nickname:", `${member.nickname || 'None'}`, true)
-                                                        .addField("Status:", status(), true)
-                                                        .addField("Bot:", `${isBot()}`, true)
-                                                        .addField("Game", game(), true)
-                                                        .addField("Created At" + ` (${moment(user.createdAt, "dd").fromNow()})`, `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, false)
-                                                        .addField("Joined Server" + ` (${moment(member.joinedAt, "dd").fromNow()})`, `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, false)
-                                                        .addField("Highest Role", member.highestRole, true)
-                                                        .addField("Roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
-                                                        .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL())
-                                                    message.channel.send({
-                                                        embed
-                                                    });
-                                                }
-                                            }          
+                                break;
+                                                 
       }
 )
 bot.login(token);
