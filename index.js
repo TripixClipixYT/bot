@@ -27,7 +27,7 @@ bot.on("ready", async () => {
 
   bot.user.setActivity("tutorials on TSC", {type: "WATCHING"});
 
-  //bot.user.setGame("on SourceCade!");
+  bot.user.setGame("on Tripix Clipix!");
 });
 
 bot.on("message", async message => {
@@ -160,4 +160,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(tokenfile.token);
+bot.login(token);
