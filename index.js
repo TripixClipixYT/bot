@@ -57,14 +57,9 @@ case 'serverinfo':
                                              message.channel.sendEmbed(embed4); 
                                                   break;
                                                 }       
-                                                if(!args[0]){
-                                                   message.delete();
-                                                   let embed = new Discord.RichEmbed()
-                                                   .setAuthor(`Help Command!`, message.guild.iconURL)
-                                                   .setColor(colours.cyan)
-                                                   .setDescription(`${message.author.username} check your DM!`)
+    case 'help':
                                                    
-                                                   let Sembed = new Discord.RichEmbed()
+                                                   const Sembed = new Discord.RichEmbed()
                                                    .setColor(colours.redlight)
                                                    .setAuthor(`Tripix Clipix`, message.guild.iconURL)
                                                    .setThumbnail(bot.user.displayAvatarURL)
