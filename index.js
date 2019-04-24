@@ -73,8 +73,7 @@ case 'serverinfo':
                                                    .addField(`Commands: "developer" "user" "serverinfo" "botinfo"`)
                                                    .setFooter("Tripix Clipix\n 2k19 Developed!")
                                                    message.channel.send(Sembed)
-                                                   
-                                                   
+                                                   break;
                                                    }
                                              }
 )
