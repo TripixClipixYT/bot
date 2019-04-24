@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XMCiQg.pzPztW0RvbvTg1Fd_RSkBLN0d4s';
 const PREFIX = '/';
- 
+
 var version = '1.1.12';
 
 bot.on('ready', () =>{
@@ -67,10 +67,10 @@ case 'serverinfo':
                                                    .setDescription(`These are the avaliable commands at the moment for Tripix Clipix\n The bot prefix is ${prefix}`)
                                                    .addField(`Commands: "developer" "user" "serverinfo" "botinfo"`)
                                                    .setFooter("Tripix Clipix\n 2k19 Developed!")
-                                                   message.channel.send(Sembed)
+                                                   message.channel.send(Sembed);
                                                    break;
                                                    }
-   }
+   })
                                              }
 )
 bot.login(token);
