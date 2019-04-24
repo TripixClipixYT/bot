@@ -1,0 +1,10 @@
+This Bot is Developed by TripixClipixYT#6035
+Date the bot was launched:
+3/4/2019 1:23:32 Bulgaria GTM +3(Bulgaria Time Zone)
+Bot Prefix
+[/](without the square brackets)
+Bot Help Command
+/Help -- Sends a Message with a full list of commands
+/socialmedia --Shows The Dev's Social Media
+/author --Shows the Developer of the bot
+/botinfo --Shows the Bot Info

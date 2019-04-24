@@ -1,4 +1,4 @@
-var Discord = require('discord.io');
+var Discord = require('discord.js');
 var logger = require('winston');
 var auth = require('./auth.json');
 // Configure logger settings
@@ -8,10 +8,8 @@ logger.add(new logger.transports.Console, {
 });
 logger.level = 'debug';
 // Initialize Discord Bot
-var bot = new Discord.Client({
+bot.login(token)
    token: NTU3OTQ4MjM2Mzc2MzA5Nzgw.XKUZPw.rzAnPxqZ393AgRxY0hSrZHQ1-iE
-   autorun: true
-});
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
