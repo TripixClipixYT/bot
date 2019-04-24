@@ -60,7 +60,7 @@ case 'serverinfo':
     case 'help':
                                                    
                                                    const Sembed = new Discord.RichEmbed()
-                                                   .setColor(00FFFF)
+                                                   .setColor(0xF1C40F)
                                                    .setAuthor(`Tripix Clipix`, message.guild.iconURL)
                                                    .setThumbnail(bot.user.displayAvatarURL)
                                                    .setTimestamp()
