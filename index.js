@@ -1,20 +1,20 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client(); 
 
-const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XLnZfg.d2SwG3-G-V8iAQfNfeUh9H_w-ZU';
+const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XMCiQg.pzPztW0RvbvTg1Fd_RSkBLN0d4s';
 const PREFIX = '/';
  
-var version = '1.1.9';
+var version = '1.1.12';
 
 bot.on('ready', () =>{
       console.log('Tripix Clipix Bot is online!');
    })
 
-   let statuses =["Tripix Clipix and Vanix_'s videos", "Vanix_ is Tripix Clipix's second channel"]
+   let statuses =["Tripix Clipix and Vanix_'s videos"]
 
 setInterval(function(){
   let status = statuses[Math.floor(Math.random()* statuses.length)];
-  bot.user.setActivity(status, {type: 'WATCHING'});
+  bot.user.setActivity(status, {type: 'Playing'});
 }, 1000)
 
    bot.on('message', message=>{
@@ -54,9 +54,9 @@ case 'serverinfo':
                                 .addField('Bot Version', version)
                                    .setColor(0xF1C40F)
                                          .setFooter('Made by TripixClipixYT#6035')
-                                             message.channel.sendEmbed(embed4);
-                                break;
-                                                 
+                                             message.channel.sendEmbed(embed4); 
+                                                  break;
+                                            }        
       }
 )
 bot.login(token);
