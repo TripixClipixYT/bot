@@ -65,7 +65,7 @@ case 'serverinfo':
                                                    .setThumbnail(bot.user.displayAvatarURL)
                                                    .setTimestamp()
                                                    .setDescription(`These are the avaliable commands at the moment for Tripix Clipix\n The bot prefix is "/"`)
-                                                   .addField(`Commands: "developer" "user" "serverinfo" "botinfo" "help"`)
+                                                   .addField(`Commands:\n "developer" "user" "serverinfo" "botinfo" "help"`)
                                                    .setFooter("Tripix Clipix\n 2k19 Developed!")
                                                    message.channel.send(Sembed);
                                                    break;
