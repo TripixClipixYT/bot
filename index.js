@@ -56,7 +56,7 @@ case 'serverinfo':
                                          .setFooter('Made by TripixClipixYT#6035')
                                              message.channel.sendEmbed(embed4); 
                                                   break;
-                                                }       
+                                                    
     case 'help':
                                                    
                                                    const Sembed = new Discord.RichEmbed()
@@ -70,6 +70,7 @@ case 'serverinfo':
                                                    message.channel.send(Sembed)
                                                    break;
                                                    }
+   }
                                              }
 )
 bot.login(token);
