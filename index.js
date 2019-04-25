@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XMCiQg.pzPztW0RvbvTg1Fd_RSkBLN0d4s';
 const PREFIX = '/';
 
-var version = '1.1.12';
+var version = '1.2.0';
 
 bot.on('ready', () =>{
       console.log('Tripix Clipix Bot is online!');
