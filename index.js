@@ -70,7 +70,6 @@ case 'serverinfo':
                                                    message.channel.send(Sembed);
                                                    break;
                                                    }
-   }
                                              }
 )
 bot.login(token);
