@@ -25,9 +25,6 @@ setInterval(function(){
    bot.on('message', message=>{
       let args = message.content.substring(PREFIX.length).split(" ");
       switch(args[0]){
-          case 'ping':
-              message.reply('pong', message.author.p);
-               break;
                     case 'developer':
                        message.reply('This is a ChatBot by TripixClipixYT#6035!')
                              break;
@@ -97,7 +94,7 @@ case 'serverinfo':
                                                    break;          
       } 
         if (message.content === prefix + "ping"){
-    message.reply("Pong! (hold on, processing latency...)").then(m => m.edit(`${msg.author}:ping_pong: Pong!  (Current latency is ${m.createdTimestamp - msg.createdTimestamp}ms, while the API Latency is ${Math.round(bot.ping)}ms)`) );
+    message.reply("Pong! (hold on, processing latency...)").then(m => m.edit(`${message.author}:ping_pong: Pong!  (Current latency is ${m.createdTimestamp - message.createdTimestamp}ms, while the API Latency is ${Math.round(bot.ping)}ms)`) );
     message.react("✅");
   }            
       
