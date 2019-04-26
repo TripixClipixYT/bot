@@ -10,8 +10,8 @@ bot.on('ready', () =>{
       console.log('Tripix Clipix Bot is online!');
    })
 
-   let statuses =["Tripix Clipix and Vanix_'s videos",
-       `Over ${bot.guilds.size} Servers`,
+   let statuses =[
+       `${bot.guilds.size} Servers`,
        `Over ${bot.users.size} Users `,
         `/help`
 ]
@@ -48,6 +48,7 @@ case 'serverinfo':
         .addField('Server Name', message.guild.name)
            .setColor(0xF1C40F)
               .addField('Server Was Created in:', message.guild.createdAt)
+      .addField('Members Joined:', message.guild.memberCount)
                   .setFooter('Made by TripixClipixYT#6035')
                       message.channel.sendEmbed(embed);
                            break; 
