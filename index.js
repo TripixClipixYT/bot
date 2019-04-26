@@ -13,7 +13,7 @@ bot.on('ready', () =>{
    let statuses =["Tripix Clipix and Vanix_'s videos",
        `Over ${bot.guilds.size}`,
        `Over ${bot.users.size}`,
-        `${prefix}help`
+        `/help`
 ]
 
 setInterval(function(){
