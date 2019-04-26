@@ -12,7 +12,7 @@ bot.on('ready', () =>{
 
    let statuses =[
        `${bot.guilds.size} Servers`,
-       `Over ${bot.memberCount.size} Users `,
+       `Over ${bot.users.size} Users `,
         `/help`
 ]
 
