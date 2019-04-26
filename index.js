@@ -94,7 +94,11 @@ case 'serverinfo':
                                                    .setFooter("Tripix Clipix\n 2k19 Developed!")
                                                    message.channel.send(Sembed)
                                                    break;
-                                                           
+        if (msg.content === prefix + "ping"){
+    msg.delete();
+    msg.reply("Pong! (hold on, processing latency...)").then(m => m.edit(`${msg.author}:ping_pong: Pong!  (Current latency is ${m.createdTimestamp - msg.createdTimestamp}ms, while the API Latency is ${Math.round(bot.ping)}ms)`) );
+    msg.react("✅");
+  }            
                                             
    
                                          
