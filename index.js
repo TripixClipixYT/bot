@@ -50,7 +50,7 @@ case 'serverinfo':
               .addField('Server Was Created in:', message.guild.createdAt)
       .addField('Members Joined:', message.guild.memberCount)
                   .setFooter('Made by TripixClipixYT#6035')
-                      message.channel.sendEmbed(embed);
+                      message.channel.sendEmbed(embed2);
                            break; 
                            case 'botinfo':
                             const embed4 = new Discord.RichEmbed()
