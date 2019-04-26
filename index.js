@@ -3,7 +3,8 @@ const bot = new Discord.Client();
 
 const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XMCiQg.pzPztW0RvbvTg1Fd_RSkBLN0d4s';
 const PREFIX = '/';
- 
+
+var prefix = '/'; 
 var version = '1.1.12';
 
 bot.on('ready', () =>{
