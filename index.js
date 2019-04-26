@@ -12,14 +12,14 @@ bot.on('ready', () =>{
 
    let statuses =[
        `${bot.guilds.size} Servers`,
-       `Over ${bot.users.size} Users `,
+       `Over ${bot.memberCount.size} Users `,
         `/help`
 ]
 
 setInterval(function(){
   let status = statuses[Math.floor(Math.random()* statuses.length)];
-  bot.user.setActivity(status, {type: 'WATCHING'});
-}, 1000)
+  bot.user.setActivity(status, {type: 'lISTENING'});
+}, 5000)
 
    bot.on('message', message=>{
       let args = message.content.substring(PREFIX.length).split(" ");
