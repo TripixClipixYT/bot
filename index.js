@@ -88,13 +88,13 @@ case 'serverinfo':
                                                    .setThumbnail(bot.user.displayAvatarURL)
                                                    .setTimestamp()
                                                    .setDescription(`These are the avaliable commands at the moment for Tripix Clipix\n The bot prefix is "/"`)
-                                                   .addField(`Commands:"developer" "user" "serverinfo" "botinfo"`)
+                                                   .addField(`Commands:"developer" "user" "serverinfo" "botinfo" "ping" `)
                                                    .setFooter("Tripix Clipix\n 2k19 Developed!")
                                                    message.channel.send(Sembed)
                                                    break;          
       } 
         if (message.content === prefix + "ping"){
-    message.reply("Pong! (hold on, processing latency...)").then(m => m.edit(`${message.author}:ping_pong: Pong!  (Current latency is ${m.createdTimestamp - message.createdTimestamp}ms, while the API Latency is ${Math.round(bot.ping)}ms)`) );
+    message.reply("Pong! (hold on, processing latency...)").then(m => m.edit(`${message.author}:ping_pong: Pong!  (Current latency is `${m.createdTimestamp - message.createdTimestamp}ms`, while the API Latency is `${Math.round(bot.ping)}ms`)`) );
     message.react("✅");
   }            
       
