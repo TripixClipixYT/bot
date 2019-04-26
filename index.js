@@ -96,7 +96,6 @@ case 'serverinfo':
                                                    message.channel.send(Sembed)
                                                    break;
         if (msg.content === prefix + "ping"){
-    msg.delete();
     msg.reply("Pong! (hold on, processing latency...)").then(m => m.edit(`${msg.author}:ping_pong: Pong!  (Current latency is ${m.createdTimestamp - msg.createdTimestamp}ms, while the API Latency is ${Math.round(bot.ping)}ms)`) );
     msg.react("✅");
   }            
@@ -107,7 +106,11 @@ case 'serverinfo':
                                         
                                      
                 
-      }    
+      } 
+                 if (msg.content === prefix + "ping"){
+    msg.reply("Pong! (hold on, processing latency...)").then(m => m.edit(`${msg.author}:ping_pong: Pong!  (Current latency is ${m.createdTimestamp - msg.createdTimestamp}ms, while the API Latency is ${Math.round(bot.ping)}ms)`) );
+    msg.react("✅");
+  }   
                                }
    )
    
