@@ -10,7 +10,7 @@ bot.on('ready', () =>{
       console.log('Tripix Clipix Bot is online!');
    })
 
-   let statuses =["Tripix Clipix and Vanix_'s videos"
+   let statuses =["Tripix Clipix and Vanix_'s videos",
        `Over ${bot.guilds.size}`,
        `Over ${bot.users.size}`,
         `${prefix}help`
