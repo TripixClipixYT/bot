@@ -1,16 +1,18 @@
 {
-  "name": "tripixclipix",
-  "version": "1.0.1",
-  "description": "Youtube Bot!",
+  "name": "Popuko",
+  "version": "1.0.0",
+  "description": "Popuko bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "TripixClipixYT",
+  "author": "ned",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.4.2",
-    "node.js": "0.0.0"
-  },
-  "devDependencies": {}
+    "discord.js": "^11.3.0",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.5.5",
+    "ms": "^2.1.1",
+    "requests": "^0.2.2"
+  }
 }
