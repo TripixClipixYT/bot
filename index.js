@@ -1,104 +1,119 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client(); 
 
-const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XMCiQg.pzPztW0RvbvTg1Fd_RSkBLN0d4s';
-const PREFIX = '/';
+//888~-_                               888   _            
+//888   \   e88~-_  888-~88e  888  888 888 e~ ~   e88~-_  
+//888    | d888   i 888  888b 888  888 888d8b    d888   i 
+//888   /  8888   | 888  8888 888  888 888Y88b   8888   | 
+//888_-~   Y888   ' 888  888P 888  888 888 Y88b  Y888   ' 
+//888       "88_-~  888-_88"  "88_-888 888  Y88b  "88_-~  
+//                  888                                   
+//                         Your Very Own Discord Bot
 
-var prefix = '/'; 
-var version = '1.1.12';
+const botconfig = require("./botconfig.json");
+const tokenfile = require("./token.json");
+const Discord = require("discord.js");
+const fs = require("fs");
+const bot = new Discord.Client();
+bot.commands = new Discord.Collection();
+let coins = require("./coins.json");
+let xp = require("./xp.json");
+let purple = botconfig.purple;
 
-bot.on('ready', () =>{
-      console.log('Tripix Clipix Bot is online!');
-   })
+fs.readdir("./commands/", (err, files) => {
 
-   let statuses =[
-       `${bot.guilds.size} Servers`,
-       `Over ${bot.users.size} Users `,
-        `/help`
-]
+  if(err) console.log(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js");
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
 
-setInterval(function(){
-  let status = statuses[Math.floor(Math.random()* statuses.length)];
-  bot.user.setActivity(status, {type: 'lISTENING'});
-}, 5000)
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    bot.commands.set(props.help.name, props);
+  });
+});
 
-   bot.on('message', message=>{
-      let args = message.content.substring(PREFIX.length).split(" ");
-      switch(args[0]){
-                    case 'developer':
-                       message.reply('This is a ChatBot by TripixClipixYT#6035!')
-                             break;
-                                   case 'user':
-                                       const embed = new Discord.RichEmbed()
-                                           .setTitle('User Information')
-                                              .addField('Player Name:', message.author.username)
-                                                  .setColor(0xF1C40F)
-                                                    .addField('Current Server', message.guild.name)
-                                                      .addField('Date your Discord account was created:', message.author.createdAt)
-                                                      .addField('Date you joined the server:', message.author.joined)
-                                                       .setThumbnail(message.author.avatarURL)
-                                                        .setFooter('Made by TripixClipixYT#6035')
-                                                          message.channel.sendEmbed(embed);
-                                                             break;             
-case 'serverinfo':
-    const embed2 = new Discord.RichEmbed()
-     .setTitle('Server Information')
-        .addField('Server Name', message.guild.name)
-           .setColor(0xF1C40F)
-              .addField('Server Was Created in:', message.guild.createdAt)
-      .addField('Members Joined:', message.guild.memberCount)
-                  .setFooter('Made by TripixClipixYT#6035')
-                      message.channel.sendEmbed(embed2);
-                           break; 
-                           case 'botinfo':
-                            const embed4 = new Discord.RichEmbed()
-                             .setTitle('Bot Information')
-                                .addField('Bot Name:Tripix Clipix')
-                                .addField('Bot Version', version)
-                                   .setColor(0xF1C40F)
-                                         .setFooter('Made by TripixClipixYT#6035')
-                                         exports.run = async (client, message, args, tools) => {
-    
-                                            // Variables
-                                            let servers = client.guilds.size; // Server Count
-                                            let users = 0; // Start of user count
-                                            let channels = client.channels.size; // Channel Count
-                                            
-                                            // This goes through every guild to grab an accurate memberCount;
-                                            client.guilds.map(g => users += g.memberCount);
-                                            
-                                            // Form Embed
-                                            const stembed = new Discord.MessageEmbed()
-                                                .setTitle('Community Channels')
-                                                .addField('Servers', servers, true)
-                                                .addField('Users', users, true)
-                                                .addField('Channels', channels, true);
-                                        
-                                            // Send Embed
-                                            
-                                        }
-                                             message.channel.sendEmbed(embed4); 
-                                                  break;
-                                                     
-                                                 case 'help':
-                                                
-                                                   const Sembed = new Discord.RichEmbed()
-                                                   .setColor(0xF1C40F)
-                                                   .setAuthor(`MBG`, message.guild.iconURL)
-                                                   .setThumbnail(bot.user.displayAvatarURL)
-                                                   .setTimestamp()
-                                                   .setDescription(`These are the avaliable commands at the moment for Tripix Clipix\n The bot prefix is "/"`)
-                                                   .addField(`Commands:"developer" "user" "serverinfo" "botinfo" "ping" `)
-                                                   .setFooter("Tripix Clipix\n 2k19 Developed!")
-                                                   message.channel.send(Sembed)
-                                                   break;          
-      } 
-        if (message.content === prefix + "ping"){
-    message.reply("Pong! (hold on, processing latency...)").then(m => m.edit(`${message.author}:ping_pong: Pong!  (Current latency is ${m.createdTimestamp - message.createdTimestamp}ms, while the API Latency is ${Math.round(bot.ping)}ms)`) );
-    message.react("✅");
-  }            
-      
-                               }
-   )
-   
-bot.login(token);
+bot.on("ready", async () => {
+
+  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers! v1.2`);
+
+});
+
+
+bot.on("message", async message => {
+
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+  if(!prefixes[message.guild.id]){
+    prefixes[message.guild.id] = {
+      prefixes: botconfig.prefix
+    };
+  }
+
+  if(!coins[message.author.id]){
+    coins[message.author.id] = {
+      coins: 0
+    };
+  }
+
+  let coinAmt = Math.floor(Math.random() * 15) + 1;
+  let baseAmt = Math.floor(Math.random() * 15) + 1;
+  console.log(`${coinAmt} ; ${baseAmt}`);
+
+  if(coinAmt === baseAmt){
+    coins[message.author.id] = {
+      coins: coins[message.author.id].coins + coinAmt
+    };
+  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+    if (err) console.log(err)
+  });
+  let coinEmbed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#7289DA")
+  .addField("💸", `${coinAmt} Popukoins added!`);
+
+  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
+  }
+
+  let xpAdd = Math.floor(Math.random() * 7) + 8;
+  console.log(xpAdd);
+
+  if(!xp[message.author.id]){
+    xp[message.author.id] = {
+      xp: 0,
+      level: 1
+    };
+  }
+
+
+  let curxp = xp[message.author.id].xp;
+  let curlvl = xp[message.author.id].level;
+  let nxtLvl = xp[message.author.id].level * 300;
+  xp[message.author.id].xp =  curxp + xpAdd;
+  if(nxtLvl <= xp[message.author.id].xp){
+    xp[message.author.id].level = curlvl + 1;
+    let lvlup = new Discord.RichEmbed()
+    .setAuthor(message.author.username)
+    .setColor("#7289DA")
+    .addField("You have leveled up to level ", curlvl + 1);
+
+    message.channel.send(lvlup).then(msg => {msg.delete(5000)});
+  }
+  fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+    if(err) console.log(err)
+  });
+
+  let prefix = prefixes[message.guild.id].prefixes;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
+  let commandfile = bot.commands.get(cmd.slice(prefix.length));
+  if(commandfile) commandfile.run(bot,message,args);
+
+});
+
+bot.login(tokenfile.token);
