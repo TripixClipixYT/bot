@@ -77,16 +77,7 @@ const { botconfig } = require ("../../botconfig.json");
 var version = "1.0.3[Alpha]";
 var bdeveloper= "LuciferBG#6035";
 
-module.exports = {
-    config: {
-        name: "binfo",
-        description: "Pulls the info of the bot!",
-        usage: "!binfo",
-        category: "miscellaneous",
-        accessableby: "Members",
-        aliases: ["bi", "botdesc"]
-    },
-    run: async (bot, message, args) => {
+            case 'botinfo':
     let biEmbed = new RichEmbed()
         .setColor(cyan)
         .setTimestamp()
@@ -104,6 +95,7 @@ module.exports = {
         .addField("**More Info:**", "When the bot is in **Beta** mode **admins** and **mods** can use the bot code and help for finishig him!")
         .setFooter(`Gamerz`, bot.user.displayAvatarURL);
     message.channel.send(biEmbed);
+                  break;
     }
 }
       
