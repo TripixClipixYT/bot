@@ -96,8 +96,6 @@ var bdeveloper= "LuciferBG#6035";
         .setFooter(`Gamerz`, bot.user.displayAvatarURL);
     message.channel.send(biEmbed);
                   break;
-    }
-}
       
       } 
         if (message.content === prefix + "ping"){
