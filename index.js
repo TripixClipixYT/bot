@@ -65,7 +65,7 @@ case 'serverinfo':
                                                    .setAuthor(`MBG`, message.guild.iconURL)
                                                    .setThumbnail(bot.user.displayAvatarURL)
                                                    .setTimestamp()
-                                                   .setDescription(`These are the avaliable commands at the moment for Tripix Clipix\n The bot prefix is "/"`)
+                                                   .setDescription(`These are the avaliable commands at the moment for Tripix Clipix\n The bot prefix is`, PREFIX)
                                                    .addField(`Commands:"developer" "user" "serverinfo" "botinfo" "ping" `)
                                                    .setFooter("Tripix Clipix\n 2k19 Developed!")
                                                    message.channel.send(Sembed)
