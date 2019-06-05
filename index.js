@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client(); 
 
 const token = 'NTcxNjc4NTY0MjE5NDg2MjQ4.XPezoA.4g6xjm0frR-KduDhvrTVMKwiUNs';
-const PREFIX = '/';
+const PREFIX = 'tr!';
 
 var prefix = '/'; 
 var version = '1.1.12';
@@ -12,9 +12,8 @@ bot.on('ready', () =>{
    })
 
    let statuses =[
-       `${bot.guilds.size} Servers`,
-       `Over ${bot.users.size} Users `,
-        `/help`
+     `tr!help`,
+         `Skillet-Legendary`
 ]
 
 setInterval(function(){
@@ -56,28 +55,7 @@ case 'serverinfo':
                                 .addField('Bot Name:Tripix Clipix')
                                 .addField('Bot Version', version)
                                    .setColor(0xF1C40F)
-                                         .setFooter('Made by TripixClipixYT#6035')
-                                         exports.run = async (client, message, args, tools) => {
-    
-                                            // Variables
-                                            let servers = client.guilds.size; // Server Count
-                                            let users = 0; // Start of user count
-                                            let channels = client.channels.size; // Channel Count
-                                            
-                                            // This goes through every guild to grab an accurate memberCount;
-                                            client.guilds.map(g => users += g.memberCount);
-                                            
-                                            // Form Embed
-                                            const stembed = new Discord.MessageEmbed()
-                                                .setTitle('Community Channels')
-                                                .addField('Servers', servers, true)
-                                                .addField('Users', users, true)
-                                                .addField('Channels', channels, true);
-                                        
-                                            // Send Embed
-                                            
-                                        }
-                                             message.channel.sendEmbed(embed4); 
+                                         .setFooter('Made by TripixClipixYT#6035');
                                                   break;
                                                      
                                                  case 'help':
