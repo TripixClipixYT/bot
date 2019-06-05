@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client(); 
 
-const token = 'NTM1ODU3NTE4MzY3MzQyNTkz.XMCiQg.pzPztW0RvbvTg1Fd_RSkBLN0d4s';
+const token = 'NTcxNjc4NTY0MjE5NDg2MjQ4.XPezoA.4g6xjm0frR-KduDhvrTVMKwiUNs';
 const PREFIX = '/';
 
 var prefix = '/'; 
