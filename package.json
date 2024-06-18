@@ -9,7 +9,7 @@
   "author": "TripixClipixYT",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.4.2",
+    "discord.js": "^11.6.4",
     "node.js": "0.0.0"
   },
   "devDependencies": {}
